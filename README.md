@@ -28,4 +28,13 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 3. Play around with the information already uploaded.
 4. As a logged in user, you will be able to add, edit, and delete both subcatalog and item entries that you own only. 
 
+### Software used or added
+1. Program runs exclusively on Python3, and uses the following frameworks/tools: `flask`, `psycopg2`, `httplib2`, `oauth2client`, `virtualenv`, `mod-wsgi-py3`, and `sqlalchemy`.
+2. Database used is SQLite3 (The PostgreSQL was not used).
+3. Notable configurations made:
+- Added `grader` account into `/etc/sudoers.d`
+- For `/etc/apache2/sites-enabled/000-default.conf`, the WSGI daemon method was used. 
+- The database file `catalog.db` had to have access rights changed to `chmod 777` for both the file and the `/html` folder housing it.
+- For interest, the following error log was extremely useful: `/var/log/apache2/error.log`.
+
 **Special Thanks to *[rrojoson](https://github.com/rrjoson/)* for his very helpful README!**
